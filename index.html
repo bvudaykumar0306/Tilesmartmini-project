@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tiles Mart</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+nav{
+    background:#0b5ed7;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    padding:15px 60px;
+    position:sticky;
+    top:0;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+}
+
+.hero{
+    height:80vh;
+    background:url("images/slide.avif") center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:50px;
+}
+
+.hero button{
+    margin-top:20px;
+    padding:12px 30px;
+    background:orange;
+    border:none;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+
+}
+
+.about{
+    display:flex;
+    padding:60px;
+    gap:40px;
+}
+
+.about img{
+    width:450px;
+    border-radius:10px;
+}
+
+.about-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:  column;
+    background-color: aliceblue;
+    height:200px ;
+    /* padding-top: 100px; */
+    margin-top: 100px;
+    border-radius: 20px;
+    
+}
+.b{
+    font-size: 30px;
+}
+
+
+
+
+
+
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    padding:50px;
+}
+
+.card{
+    background:white;
+    box-shadow:0 5px 10px gray;
+    border-radius:10px;
+    overflow:hidden;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:180px;
+}
+
+.card h3{
+    padding:15px;
+    text-align:center;
+}
+
+/* .contact{
+    background:#f5f5f5;
+    padding:50px;
+    text-align:center;
+}
+
+.contact input,
+.contact textarea{
+    width:70%;
+    padding:12px;
+    margin:10px;
+}
+
+.contact button{
+    padding:12px 25px;
+    background:#0b5ed7;
+    color:white;
+    border:none;
+}
+*/
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+} 
+.container{
+
+    width:350px;
+
+    margin:50px auto;
+
+    padding:20px;
+
+    background:white;
+
+    border-radius:10px;
+
+    box-shadow:0 0 10px gray;
+
+    text-align:center;
+
+}
+
+input,textarea{
+
+    width:90%;
+
+    padding:10px;
+
+    margin:10px;
+
+    border:1px solid gray;
+
+    border-radius:5px;
+
+    font-size:16px;
+
+}
+
+button{
+
+    padding:10px 25px;
+
+    background:green;
+
+    color:white;
+
+    border:none;
+
+    border-radius:5px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+}
+
+button:hover{
+
+    background:darkgreen;
+
+}
+
+#result{
+
+    margin-top:15px;
+
+    font-weight:bold;
+
+}
+
+
+h1 p button{
+    color: blue;
+}
+.a{
+    text-align: center;
+}
+
+.flow-text{
+    font-size:60px;
+    font-weight:bold;
+    text-align:center;
+    font-family:Arial, sans-serif;
+
+    background:linear-gradient(
+        90deg,
+        red,
+        orange,
+        yellow,
+        green,
+        cyan,
+        blue,
+        purple,
+        red
+    );
+
+    background-size:400%;
+    background-clip:text;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:flowRightToLeft 5s linear infinite;
+}
+
+@keyframes flowRightToLeft{
+    0%{
+        background-position:100% 0;
+    }
+
+    100%{
+        background-position:0% 0;
+    }
+}
+
+a{
+    color: rgb(8, 7, 7);
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+<h2>Tiles Mart</h2>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#tiles">Tiles</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+<div >
+<h1 class="flow-text">Beautiful Tiles For Every Home</h1>
+<p>Premium Floor & Wall Tiles</p>
+<button onclick="ourtiles()">Explore</button>
+</div>
+</section>
+
+<section class="about" id="about">
+
+<img src="images/about.jpeg" alt="About Dream Tiles">
+
+<div class="about-text">
+
+<div class="b">About Us</div>
+<br>
+<div class="c">
+We offer premium ceramic, vitrified, marble,
+granite, wooden, bathroom and kitchen tiles
+with modern designs and affordable prices.
+</div>
+
+</div>
+
+</section>
+
+<section id="tiles">
+
+<h2 style="text-align:center;">Our Tiles</h2>
+
+<div class="cards">
+
+<div class="card" id="cera">
+<img src="images/ceramic.jpeg" alt="Ceramic tiles" id="a">
+<h3><a href="#cera1">Ceramic Tiles</a> </h3>
+</div>
+
+<div class="card">
+<img src="images/marbel.jpeg" alt="Marble tiles">
+<h3>Marble Tiles</h3>
+</div>
+
+<div class="card">
+<img src="images/granite.jpeg" alt="Granite tiles">
+<h3>Granite Tiles</h3>
+</div>
+
+<div class="card">
+<img src="images/vitrified.jpeg" alt="Vitrified tiles">
+<h3>Vitrified Tiles</h3>
+</div>
+
+<div class="card">
+<img src="images/Porcelain Tiles.webp" alt="Vitrified tiles">
+<h3>Porcelain Tiles</h3>
+</div>
+
+<div class="card">
+<img src="images/Cross-Mosaic-tiles.jpeg" alt="Vitrified tiles">
+<h3>Mosaic Tiles</h3>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="tiles">
+
+<h2 style="text-align:center;" id="cera1">Ceramic  Tiles</h2>
+
+<div class="cards">
+
+<div class="card" id="ce">
+<img src="images/ceramic.jpeg" alt="Ceramic tiles"  onclick="openDetails('ce')">
+<h3>Ceramic Tiles</h3>
+</div>
+
+<div class="card" id="cer">
+<img src="images/simple-handprinted-ceramic-tile.webp" alt="handprinted ceramic tiles" onclick="openDetailss('ma')">
+<h3>handprinted-ceramic-tile</h3>
+</div>
+
+<div class="card">
+<img src="images/diagonal tiles.jpeg" alt="Granite tiles">
+<h3>Rhombus shape Tiles</h3>
+</div>
+
+<div class="card">
+<img src="images/wall tiles.webp" alt="Vitrified tiles">
+<h3>Wall Tiles</h3>
+</div>
+
+<div class="card">
+<img src="images/ceramic-rhombus-tile.webp" alt="Vitrified tiles">
+<h3>Rhombus  cutting shape Tiles</h3>
+</div>
+
+<div class="card">
+<img src="images/rose_blue.jpg" alt="Vitrified tiles">
+<h3>Rose blue Tiles</h3>
+</div>
+
+</div>
+
+
+
+<section id="tiles">
+
+<h2 style="text-align:center;" id="cera1">marbal  Tiles</h2>
+
+<div class="cards">
+
+<div class="card" id="ce">
+<img src="images/marbel.jpeg" alt="marbal tiles"  onclick="openDetail('ma')">
+<h3>marbel Tiles</h3>
+</div>
+
+<div class="card" id="cer">
+<img src="images/marble-tiles-square shape.jpg" alt="marbal square shape tiles" onclick="openDetai('mar')">
+<h3>handprinted-ceramic-tile</h3>
+</div>
+
+<div class="card">
+<img src="images/marbal tile1.jpeg" alt="marbal tiles">
+<h3>Rhombus shape Tiles</h3>
+</div>
+
+<div class="card">
+<img src="images/rectangular-glossy-marble-floors-tiles.jpg" alt="Vitrified tiles">
+<h3>Wall Tiles</h3>
+</div>
+
+<!-- <div class="card">
+<img src="images/ceramic-rhombus-tile.webp" alt="Vitrified tiles">
+<h3>Rhombus  cutting shape Tiles</h3>
+</div>
+
+<div class="card">
+<img src="images/rose_blue.jpg" alt="Vitrified tiles">
+<h3>Rose blue Tiles</h3>
+</div> -->
+
+</div>
+
+</section>
+<section class="contact" id="contact">
+
+<!-- <h2>Contact Us</h2> -->
+
+<!-- <input type="text"  placeholder="Your Name"><br>
+
+<input type="email" placeholder="Email"><br>
+
+<textarea rows="5" placeholder="Message"></textarea><br>
+
+<button>Send</button> -->
+
+<div class="container">
+
+    <h2>Contact Us</h2>
+
+    <input type="text" id="name" placeholder="Your Name"><br>
+
+    <input type="email" id="email" placeholder="Email"><br>
+
+    <textarea id="message" rows="5" placeholder="Message"></textarea><br>
+
+    <button onclick="sendMessage()">Send</button>
+
+    <p id="result"></p>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>Tiles Mart</h3>
+
+<p>📍 Madanapalle, Andhra Pradesh</p>
+
+<p>📞 +91 12345567890</p>
+
+<p>✉️ tilesmart@gmail.com</p>
+
+</footer>
+
+
+<script src="mini.js">
+    //   const a=document.getElementsById("cera");
+    //   a.addEventHandler("click",()=>{
+
+
+
+    //   })
+function ourtiles(){
+
+    document.getElementById("tiles").scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
